@@ -16,6 +16,8 @@ class Note():
 def set_note(db, note):
     if isinstance(note, Note):
         db.set(note.path, note.note)
+        os.system('gio set -t stringv "{path}" metadata::emblems emblem-note'.format(path=note.path))
+        os.system('xdotool search --desktop 0 --class "nemo" windowfocus && xdotool key F5 ')
         print('Added note "{note}" to file at "{file}"'.format(note=note.unformatted_note, file=note.path))
 
 
