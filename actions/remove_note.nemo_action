@@ -5,6 +5,7 @@ Comment=Remove note
 
 Exec=/home/loucas/Programs/Notes/notes.py "%F" -r
 
+Icon-Name=emblem-note
 Selection=Any
 
 Extensions=any

@@ -5,6 +5,7 @@ Comment=View Note
 
 Exec=/home/loucas/Programs/Notes/notes.py "%F"
 
+Icon-Name=emblem-note
 Selection=Any
 
 Extensions=any
