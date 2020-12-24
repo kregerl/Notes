@@ -1,0 +1,12 @@
+[Nemo Action]
+Active=true
+Name=Remove Note
+Comment=Remove note
+
+Exec=/home/loucas/Programs/Notes/notes.py "%F" -r
+
+Selection=Any
+
+Extensions=any
+
+

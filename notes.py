@@ -29,7 +29,11 @@ def validate_args(parser, arg):
         return path
 
 def handle_args(db, args):
-    if args.create is None and not args.add:
+    if args.remove:
+        db.remove(args.path)
+        os.system('gio set -t stringv "{path}" metadata::emblems []'.format(path=args.path))
+        os.system('xdotool search --desktop 0 --class "nemo" windowfocus && xdotool key F5 ')
+    elif args.create is None and not args.add:
         note = db.get(args.path)
         gtk.openWindow(gtk.ViewNoteWindow(note))
     elif args.add:
@@ -43,6 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('path', type=lambda i: validate_args(parser, i), help='Enter a path to a file')
     parser.add_argument('-create', '-c', dest='create', help= 'Enter the note for the specified file, leaving this argument blank will get the note of the specified file.')
     parser.add_argument('-a', '--a', dest='add', help='Add a new note using the gui', action='store_true')
+    parser.add_argument('-r', '--r', '-remove', dest='remove', help='Remove the note from the specified file', action='store_true')
     args = parser.parse_args()
     db = notes_db.JsonDatabase('/home/loucas/Programs/Notes/db.json', 'NoteDatabase')
     handle_args(db, args)
