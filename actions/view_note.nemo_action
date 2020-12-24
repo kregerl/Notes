@@ -3,7 +3,7 @@ Active=true
 Name=View Note
 Comment=View Note
 
-Exec=/home/loucas/Programs/Notes/notes.py %F
+Exec=/home/loucas/Programs/Notes/notes.py "%F"
 
 Selection=Any
 

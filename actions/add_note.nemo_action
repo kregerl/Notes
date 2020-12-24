@@ -3,7 +3,7 @@ Active=true
 Name=Add Note
 Comment=Add note
 
-Exec=/home/loucas/Programs/Notes/notes.py %F -a 
+Exec=/home/loucas/Programs/Notes/notes.py "%F" -a
 
 Selection=Any
 
